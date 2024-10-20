@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo "Backup..."
+cp -R ~/.config/hypr hypr
+cp -R ~/.config/kitty kitty
+cp -R ~/.config/mako mako
+cp -R ~/.config/waybar waybar
+cp -R ~/.config/swaylock swaylock
+cp -R ~/.config/wofi wofi
+cp -R ~/.config/wlogout wlogout
