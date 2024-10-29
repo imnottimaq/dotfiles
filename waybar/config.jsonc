@@ -5,14 +5,20 @@
     "exclusive": true,
     "passthrough": false,
     "gtk-layer-shell": true,
-    "height": 39,
-    "modules-left": ["clock","cpu","memory"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["privacy","network","hyprland/language","group/volume","pulseaudio#microphone","tray"],
+    "height": 26,
+    "modules-left": ["hyprland/window"],
+    "modules-right": [  "privacy",
+			"hyprland/language",
+			"pulseaudio",
+			"pulseaudio#microphone",
+			"clock",
+			"cpu",
+			"memory",
+			"tray"],
     "hyprland/window": {
         "format": "{}",
 	"icon": true,
-	"icon-size": 18,
+	"icon-size": 16,
 	"rewrite":{
 	    "(.*) - Google Chrome": "Google Chrome"
 	}
@@ -20,13 +26,13 @@
     
     "hyprland/language":{
 	"format": "{}",
-	"format-en": "🇺🇸 US",
-	"format-ru": "🇷🇺 RU",
-	"format-uk": "🇺🇦 UA"
+	"format-en": "US",
+	"format-ru": "RU",
+	"format-uk": "UA"
     },
 
     "tray": {
-        "icon-size": 24,
+        "icon-size": 20,
         "spacing": 10
     },
 
@@ -35,88 +41,47 @@
 	"timezone": "Europe/Kyiv"
     },
 
-"pulseaudio#microphone": {
-        "format": "{format_source}",
-        "format-source": " {volume}%",
-        "format-source-muted": " Muted",
-        "on-click": "pavucontrol",
-        "on-scroll-up": "pamixer --default-source -i 5",
-        "on-scroll-down": "pamixer --default-source -d 5",
-        "scroll-step": 5
+    "pulseaudio#microphone": { 
+	"format": "{format_source}", 
+	"format-source": " {volume}%",
+	"format-source-muted": " Muted", 
+	"on-click": "pavucontrol", 
+    	"on-scroll-up": "pamixer --default-source -i 5",
+	"on-scroll-down": "pamixer --default-source -d 5", 
+	"scroll-step": 5
     },
-"pulseaudio": {
-        "format": "{icon} {volume}%",
-        "tooltip": false,
-        "format-muted": " Muted",
-        "on-click": "pamixer -t",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
+    "pulseaudio": {
+	"format": "{icon}  {volume}%",
+	"tooltip": false,
+	"format-muted": " Muted",
+	"on-click": "pamixer -t",
+	"format-icons": {
             "default": ["", "", ""]
-        }
-},
-"group/volume":{
-	"orientation": "horizontal",
-	"modules":["pulseaudio","pulseaudio/slider"],
-	"drawer": {
-	    "transition-duration": 250,
 	}
-},
-"network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "  {signalStrength}%",
-        "format-ethernet": " ",
-        "tooltip-format": "{essid} - {ifname} via {gwaddr}",
-        "format-linked": "{ifname} (No IP)",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}:{essid} {ipaddr}/{cidr}"
     },
-"cpu": {
+    "cpu": {
 	"interval": 1,
-        "format": "CPU: {usage}%"
+	"format": "  {usage}%"
     },
-"memory": {
+    "memory": {
 	"interval": 1,
-	"format": "RAM: {}%"
+	"format": "  {}%"
     },
-"privacy": {
-	"icon-size": 18,
+    "privacy": {
+	"icon-size": 14,
 	"icon-spacing": 4,
 	"modules": [
-		{
-			"type": "screenshare",
-			"tooltip": true,
-			"tooltip-icon-size": 24
-		},
-		{
-			"type": "audio-in",
-			"tooltip": true,
-			"tooltip-icon-size": 24
-		}
-	 ]
+	    {
+	        "type": "screenshare",
+	        "tooltip": true,
+	        "tooltip-icon-size": 24
+	    },
+	    {
+	        "type": "audio-in",
+	        "tooltip": true,
+	        "tooltip-icon-size": 24
+	    }]
     },
-"custom/brightness": {
-    "format": "{icon} {percentage}%",
-    "format-icons": ["\uDB80\uDCDE", "\uDB80\uDCDF", "\uDB80\uDCE0"],
-    "return-type": "json",
-    "exec": "ddcutil --bus 5 getvcp 10 | grep -oP 'current.*?=\\s*\\K[0-9]+' | { read x; echo '{\"percentage\":'${x}'}'; }",
-    "on-scroll-up": "ddcutil --noverify --bus 5 setvcp 10 + 10",
-    "on-scroll-down": "ddcutil --noverify --bus 5 setvcp 10 - 10",
-    "on-click": "ddcutil --noverify --bus 5 setvcp 10 0",
-    "on-click-right": "ddcutil --noverify --bus 5 setvcp 10 100",
-    "interval": 1,
-    "tooltip": false,
-},
-"mpris": {
-    "format": "{title} - {artist} [{position} - {length}]",
-    "title-len": 25,
-    "artist-len": 20,
-    "interval": 1,
-}
 }
 
 

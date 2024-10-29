@@ -1,0 +1,126 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: bold;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(21, 18, 27, 0);
+    color: #cdd6f4;
+}
+
+tooltip {
+    background: #1e1e2e;
+    border-radius: 5px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #11111b;
+}
+
+#clock,
+#pulseaudio,
+#pulseaudio-slider,
+#network,
+#tray,
+#language,
+#cpu,
+#memory,
+#privacy,
+#mpris {
+    background: #1e1e2e;
+    opacity: 0.8;
+    padding: 0px 6px;
+    margin-top: 7px;
+    border: 1px solid rgba(30, 30, 46, 0.22);
+}
+
+#custom-poweroff,
+#custom-quit,
+#custom-lock,
+#custom-reboot {
+    background: #1e1e2e;
+    opacity: 0.8;
+    padding: 0px 10px;
+    margin-top: 7px;
+    min-width:20px;
+    border: 1px solid rgba(30, 30, 46, 0.22);
+}
+
+#window{
+    margin-top: 6px;
+}
+
+#tray,
+#privacy {
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+#window {
+    border-radius: 10px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+#clock,
+#mpris {
+    color: #fab387;
+    border-radius: 10px 10px 10px 10px;
+    margin-left: 5px;
+    border-right: 0px;
+}
+
+#cpu {
+    color: #fab387;
+    border-radius: 10px 0px 0px 10px;
+    margin-left: 5px;
+    border-right: 0px;
+}
+
+#memory {
+    color: #fab387;
+    border-radius: 0px 10px 10px 0px;
+    margin-left: 0px;
+    border-right: 0px;
+}
+
+#network {
+    color: #f9e2af;
+    border-radius: 10px 0px 0px 10px;
+    border-left: 0px;
+    border-right: 0px;
+} 
+
+#pulseaudio {
+    color: #89b4fa;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+#pulseaudio.microphone {
+    color: #cba6f7;
+    border-left: 0px;
+    border-right: 0px;
+    border-radius: 0px 10px 10px 0px;
+    margin-right: 10px;
+}
+
+#pulseaudio-slider {
+    min-width: 150px;
+
+}
+
+#pulseaudio-slider highlight {
+    color: #89b4fa;
+    border-radius: 3px 0px 0px 3px;
+}
+#pulseaudio-slider trough {
+    min-height: 2px;
+    border-radius: 0px 1px 1px 0px;
+}
+#pulseaudio-slider slider {
+    border-radius: 15px;
+}
