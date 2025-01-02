@@ -22,3 +22,8 @@
     "text" : "Reboot",
     "keybind" : "r"
 }
+{
+    "label" : "reboot_win"
+    "action" : "pkexec efibootmgr -n 0 && reboot"
+    "text" : "Reboot to Windows"
+}
